@@ -4,10 +4,11 @@ export class Searchbar extends Component {
   state = {
     name: '',
   };
+
   handleOnChange = e => {
     this.setState({ name: e.currentTarget.value });
-    // console.log(this.state.name);
   };
+
   handleOnSubmit = e => {
     e.preventDefault();
     if (this.state.name.trim() === '') {
