@@ -1,16 +1,8 @@
 import css from './galleryItem.module.css';
-export const ImageGalleryItem = ({ pictures }) => {
+export const ImageGalleryItem = ({ img, largeImage, onSelect }) => {
   return (
-    <>
-      {pictures.map(({ id, webformatURL }) => (
-        <li key={id} className="ImageGalleryItem">
-          <img
-            src={webformatURL}
-            alt=""
-            className={css.ImageGalleryItemImage}
-          />
-        </li>
-      ))}
-    </>
+    <li className="ImageGalleryItem" onClick={() => onSelect(largeImage)}>
+      <img src={img} alt="" className={css.ImageGalleryItemImage} />
+    </li>
   );
 };
